@@ -19,4 +19,17 @@ Route::get('/info', function () {
 });
 Route::get('/user','ApiController@userApi');
 Route::post('/userReg','ApiController@userReg');
+Route::get('/test','ApiController@test');
+
+//curl post发送数据
+Route::get('/test/curlpost','ApiController@curlPost');  //form-data
+Route::get('/test/curlpost2','ApiController@curlPost2');  //application/x-www-form-urlencoded
+Route::get('/test/curlpost3','ApiController@curlPost3');  //raw
+
+//中间件
+Route::get('/test/mid','ApiController@testMid')->middleware('request10times');
+
+
+
+
 
