@@ -29,6 +29,10 @@ Route::get('/test/curlpost3','ApiController@curlPost3');  //raw
 //中间件
 Route::get('/test/mid','ApiController@testMid')->middleware('request10times');
 
+//用户注册
+Route::post('/test/user/reg','UserController@userReg');
+
+
 
 
 
