@@ -31,6 +31,16 @@ Route::get('/test/mid','ApiController@testMid')->middleware('request10times');
 
 //用户注册
 Route::post('/test/user/reg','UserController@userReg');
+//登录
+Route::post('/test/user/login','UserController@userLogin');
+//个人中心
+Route::get('/test/user/my','UserController@userMy')->middleware(['CheckLogin','request10times']);
+
+
+//资源路由
+Route::resource('goods', GoodsController::class);
+
+
 
 
 

@@ -18,7 +18,8 @@ class request10times
     {
 //        echo date('Y-m-d H:i:s');echo '<hr>';
         $ip=$_SERVER['REMOTE_ADDR'];
-        $key=$ip.'request10times';
+        $token=$request->input('token');
+        $key=$ip.'request10times'.$token;
         $c=Redis::get($key);
 
         if($c>=10){
